@@ -1,6 +1,7 @@
 from django.urls import path
-from .views import hellofunc
+from .views import hellofunc, HelloClass
 
 urlpatterns = [
-    path('', hellofunc),
+    path('hello/', hellofunc),
+    path('hello2/', HelloClass.as_view()),
 ]
