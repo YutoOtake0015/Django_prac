@@ -15,6 +15,17 @@
     </title>
   </head>
   <body>
+    <nav class="navbar navbar-dark bg-success sticky-top">
+      <div class="navbar-nav d-flex flex-row">
+        <a class="nav-link mx-3" href="{% url 'list-book' %}">一覧</a>
+        <a class="nav-link mx-3" href="{% url 'create-book' %}">登録</a>
+      </div>
+    </nav>
+    <h1>
+      {% block h1 %}
+
+      {% endblock %}
+    </h1>
     {% block content %}
 
     {% endblock %}
