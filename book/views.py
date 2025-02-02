@@ -4,8 +4,8 @@ from django.urls import reverse_lazy
 from .models import Book
 
 def index_view(request):
-    object_list = Book.objects.all()
-    return render(request, 'book/index.html', {'somedata': object_list})
+    object_list = Book.objects.order_by('category')
+    return render(request, 'book/index.html', {'object_list': object_list})
 
 class ListBookView(ListView):
     template_name = 'book/book_list.html'
