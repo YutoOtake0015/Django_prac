@@ -3,6 +3,10 @@ from django.views.generic import ListView, DetailView, CreateView, DeleteView,Up
 from django.urls import reverse_lazy
 from .models import Book
 
+def index_view(request):
+    object_list = Book.objects.all()
+    return render(request, 'book/index.html', {'somedata': object_list})
+
 class ListBookView(ListView):
     template_name = 'book/book_list.html'
     model = Book
